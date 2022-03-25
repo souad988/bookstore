@@ -31,7 +31,16 @@ function Books() {
   ];
   return (
     <div className="books_container">
-      {books.map((book) => <Book key={book.id} book={book} />)}
+      {books.map((book) => (
+        <Book
+          key={book.id}
+          author={book.author}
+          title={book.title}
+          category={book.category}
+          progress={book.progress}
+          chapter={book.chapter}
+        />
+      ))}
       <AddBook />
     </div>
   );

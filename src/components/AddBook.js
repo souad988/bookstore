@@ -6,8 +6,8 @@ function AddBook() {
       <h2>ADD NEW BOOK</h2>
       <form>
         <input />
-        <select name="category" required>
-          <option value="" disabled selected hidden>Category</option>
+        <select name="category" required defaultValue="Category">
+          <option value="Category" disabled hidden>Category</option>
           <option value="comedy">comedy</option>
           <option value="drama">drama</option>
           <option value="classic">classic</option>

@@ -23,8 +23,8 @@ function Book({ ...props }) {
         </div>
       </div>
 
-      <BookProgress book={progress} />
-      <BookChapter book={chapter} />
+      <BookProgress progress={progress} />
+      <BookChapter chapter={chapter} />
     </div>
   );
 }
