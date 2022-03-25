@@ -1,0 +1,50 @@
+header {
+    color: #3E98C7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 8vh;
+    padding: 0 5%;
+    box-shadow: 0 3px 4px #646669, -0 -3px 4px #646669;
+  }
+  
+  .header_main {
+    width: 80%;
+    margin: 28vh auto;
+  }
+  
+  .header_logo {
+    color: #3E98C7;
+    font-size: xx-large;
+  }
+  
+  .header_links {
+    font-weight: 600;
+    font-size: x-large;
+  }
+  
+  /* unvisited link */
+  a {
+    color: #807f7d;
+    text-decoration: none;
+    margin: 0% 10px;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #3E98C7;
+    text-decoration: underline;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #3E98C7;
+    text-decoration: underline;
+  }
+
+.fa-user {
+    color: #3E98C7;
+}  
+  
