@@ -1,6 +1,7 @@
 import React from 'react'
 import BookProgress from './BookProgress'
 import './Book.css'
+import BookChapter from './BookChapter'
 
 function Book({...props}) {
   return (
@@ -19,6 +20,7 @@ function Book({...props}) {
       </div>
 
       <BookProgress book={props.book}/>
+      <BookChapter book={props.book}/>
     </div>
   )
 }

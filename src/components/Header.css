@@ -9,6 +9,13 @@ header {
     padding: 0 5%;
     box-shadow: 0 3px 4px #646669, -0 -3px 4px #646669;
   }
+
+  .header_logolinks {
+      width: 42%;
+      display: flex;
+      align-items: center;
+       justify-content: space-between;
+  }
   
   .header_main {
     width: 80%;
@@ -21,8 +28,8 @@ header {
   }
   
   .header_links {
-    font-weight: 600;
-    font-size: x-large;
+    font-weight: 500;
+    font-size: large;
   }
   
   /* unvisited link */
@@ -35,13 +42,11 @@ header {
   /* mouse over link */
   a:hover {
     color: #3E98C7;
-    text-decoration: underline;
   }
   
   /* selected link */
   a:active {
-    color: #3E98C7;
-    text-decoration: underline;
+    color: #09090a;
   }
 
 .fa-user {
