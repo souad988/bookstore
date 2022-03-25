@@ -1,0 +1,22 @@
+.book_container {
+  padding: 2vh 5%;
+  border: 1px solid #727374;
+  border-radius: 5px;
+  margin: 2vh 0%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.book_crud button {
+  border: none;
+  background: none;
+  font-weight: 600;
+  color: #727374;
+}
+
+.remove_btn {
+  border-left: 2px solid #727374;
+  border-right: 2px solid #727374;
+}
