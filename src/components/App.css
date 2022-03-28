@@ -1,0 +1,15 @@
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.blue_btn {
+  background-color: #3e98c7;
+  box-shadow: 0 3px 4px #646669;
+  border: none;
+  padding: 10px 20px;
+  color: #333;
+  font-weight: 600;
+}
