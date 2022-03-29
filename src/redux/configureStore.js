@@ -1,4 +1,4 @@
-import Redux, { combineReducers, createStoreHook } from 'react-redux';
+import { combineReducers, createStoreHook } from 'react-redux';
 import { booksReducer } from './books/books';
 import { categoriesReducer } from './categories/categories';
 
