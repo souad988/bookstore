@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import BookProgress from './BookProgress';
 import './Book.css';
 import BookChapter from './BookChapter';
-import {useDispatch} from 'react-redux'
-import {removeBook} from  '../../redux/books/books'
+import { removeBook } from '../../redux/books/books';
 
 function Book({ ...props }) {
   const {
-    id,author, title, category, progress, chapter,
+    id, author, title, category, progress, chapter,
   } = props;
-  const dispatch = useDispatch()
-  const handelClick=()=>{
-    dispatch(removeBook(id))
-  }
+  const dispatch = useDispatch();
+  const handelClick = () => {
+    dispatch(removeBook(id));
+  };
   return (
     <div className="book_container">
       <div className="book_info">
@@ -24,7 +24,7 @@ function Book({ ...props }) {
         </div>
         <div className="book_crud">
           <button type="button">Comments</button>
-          <button type="button" className="remove_btn"  onClick={handelClick}>Remove</button>
+          <button type="button" className="remove_btn" onClick={handelClick}>Remove</button>
           <button type="button">Edit</button>
         </div>
       </div>
