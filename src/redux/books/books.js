@@ -1,43 +1,39 @@
-export const booksState = [{
-  id: '1',
-  title: 'The Yellow Meads of Asphodel',
-  author: 'H. E. Bates',
-  category: 'action',
-  progress: '64',
-  chapter: 'chapter 17',
-},
-{
-  id: '3',
-  title: 'The Wives of Bath Susan Swan',
-  author: 'Geoffrey Chaucer',
-  category: 'comedy',
-  progress: '16',
-  chapter: 'chapter 17',
-},
-{
-  id: '2',
-  title: 'The World, the Flesh and the Devil',
-  author: 'Mary Elizabeth Braddon',
-  category: 'drama',
-  progress: '8',
-  chapter: 'chapter 17',
-}];
+import BookStoreService from '../../api/apiServices'
+
+export const booksState = [];
+const SET_BOOKS=  'bookStore/books/SET_BOOKS';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
 export const booksReducer = (booksState = [], action) => {
   switch (action.type) {
+    case SET_BOOKS:
+      return action.books;
     case ADD_BOOK:
       return [...booksState, action.book];
     case REMOVE_BOOK:
-      return [...booksState].filter((book) => book.id !== action.id);
+      return [...booksState].filter((book) => book.item_id !== action.id);
     default:
       return booksState;
   }
 };
 
-export function addBook(book) {
-  return { type: ADD_BOOK, book };
+export function setBooks(books){
+  return {type:SET_BOOKS, books}
+}
+
+export const addBook=async(book) =>{
+    
+    try {
+      const response = await BookStoreService.apiAddBook(book)
+      console.log(response);
+      dispatch(setBooks([...booksState,book]));
+      console.log('redux state',booksState);
+      return { type: ADD_BOOK, book };
+    } catch (error) {
+      console.error(error);
+    }
+  
 }
 
 export function removeBook(id) {

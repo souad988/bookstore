@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addBook } from '../redux/books/books';
+import BookStoreService from '../api/apiServices';
 
 function AddBook() {
   const dispatch = useDispatch();
   const [book, setBook] = useState(
     {
-      id: uuid(),
+      item_id: uuid(),
       chapter: 'chapter 0',
       progress: '0',
     },
@@ -21,7 +22,7 @@ function AddBook() {
   const handelClick = () => {
     dispatch(addBook(book));
     setBook({
-      id: uuid(),
+      item_id: uuid(),
       chapter: 'chapter 0',
       progress: '0',
     });

@@ -14,5 +14,5 @@ function BookChapter({ ...props }) {
 
 export default BookChapter;
 BookChapter.propTypes = {
-  chapter: PropTypes.string.isRequired,
+  chapter: PropTypes.string,
 };
