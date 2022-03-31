@@ -1,38 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Book from './book/Book';
 import AddBook from './AddBook';
 
 function Books() {
-  const books = [
-    {
-      id: 1,
-      title: 'The Yellow Meads of Asphodel',
-      author: 'H. E. Bates',
-      category: 'action',
-      progress: '64',
-      chapter: 'chapter 17',
-    },
-    {
-      id: 3,
-      title: 'The Wives of Bath Susan Swan',
-      author: 'Geoffrey Chaucer',
-      category: 'comedy',
-      progress: '16',
-      chapter: 'chapter 17',
-    },
-    {
-      id: 2,
-      title: 'The World, the Flesh and the Devil',
-      author: 'Mary Elizabeth Braddon',
-      category: 'drama',
-      progress: '8',
-      chapter: 'chapter 17',
-    },
-  ];
+  const bookList = useSelector((state) => state.books);
   return (
     <div className="books_container">
-      {books.map((book) => (
+      {bookList.map((book) => (
         <Book
+          id={book.id}
           key={book.id}
           author={book.author}
           title={book.title}

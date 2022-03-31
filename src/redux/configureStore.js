@@ -1,11 +1,12 @@
 import { combineReducers, createStore } from 'redux';
-import { booksReducer } from './books/books';
-import { categoriesReducer } from './categories/categories';
+import { booksState, booksReducer } from './books/books';
+import { categoriesState, categoriesReducer } from './categories/categories';
 
 const rootReducer = combineReducers({
   books: booksReducer,
   categories: categoriesReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore((state, action) => rootReducer(state, action),
+  { books: booksState, categories: categoriesState });
 export default store;
