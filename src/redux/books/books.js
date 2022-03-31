@@ -21,7 +21,7 @@ export const booksState = [{
   category: 'drama',
   progress: '8',
   chapter: 'chapter 17',
-},];
+}];
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 

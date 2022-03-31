@@ -1,14 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Book from './book/Book';
 import AddBook from './AddBook';
 
 function Books() {
-  const books = [
-    
-  ];
+  const bookList = useSelector((state) => state.books);
   return (
     <div className="books_container">
-      {books.map((book) => (
+      {bookList.map((book) => (
         <Book
           key={book.id}
           author={book.author}
