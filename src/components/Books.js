@@ -9,6 +9,7 @@ function Books() {
     <div className="books_container">
       {bookList.map((book) => (
         <Book
+          id={book.id}
           key={book.id}
           author={book.author}
           title={book.title}

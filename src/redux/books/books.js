@@ -1,5 +1,5 @@
 export const booksState = [{
-  id: 1,
+  id: '1',
   title: 'The Yellow Meads of Asphodel',
   author: 'H. E. Bates',
   category: 'action',
@@ -7,7 +7,7 @@ export const booksState = [{
   chapter: 'chapter 17',
 },
 {
-  id: 3,
+  id: '3',
   title: 'The Wives of Bath Susan Swan',
   author: 'Geoffrey Chaucer',
   category: 'comedy',
@@ -15,7 +15,7 @@ export const booksState = [{
   chapter: 'chapter 17',
 },
 {
-  id: 2,
+  id: '2',
   title: 'The World, the Flesh and the Devil',
   author: 'Mary Elizabeth Braddon',
   category: 'drama',
