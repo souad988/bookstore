@@ -15,13 +15,8 @@ function Books() {
   };
   useEffect(() => {
     const fetchBooks = async () => {
-      try {
-        const response = await BookStoreService.apiGetBooks();
-        console.log('from books js::', response.data);
-        dispatch(setBooks(reformulateData(response.data)));
-      } catch (error) {
-        console.error(error);
-      }
+      const response = await BookStoreService.apiGetBooks();
+      dispatch(setBooks(reformulateData(response.data)));
     };
 
     fetchBooks();

@@ -23,20 +23,11 @@ export function setBooks(books) {
 }
 
 export const addBook = (book) => async (dispatch) => {
-  try {
-    await BookStoreService.apiAddBook(book);
-    dispatch({ type: ADD_BOOK, book });
-  } catch (error) {
-    console.error('from reducer', error.message);
-  }
+  await BookStoreService.apiAddBook(book);
+  dispatch({ type: ADD_BOOK, book });
 };
 
 export const removeBook = (id) => async (dispatch) => {
-  try {
-    const response = await BookStoreService.apiRemoveBook(id);
-    console.log(response);
-    dispatch({ type: REMOVE_BOOK, id });
-  } catch (error) {
-    console.error('from reducer', error.message);
-  }
+  await BookStoreService.apiRemoveBook(id);
+  dispatch({ type: REMOVE_BOOK, id });
 };
