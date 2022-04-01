@@ -38,9 +38,13 @@ function Book({ ...props }) {
 export default Book;
 Book.propTypes = {
   id: PropTypes.string.isRequired,
-  chapter: PropTypes.string.isRequired,
+  chapter: PropTypes.string,
   author: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  progress: PropTypes.string.isRequired,
+  progress: PropTypes.string,
+};
+Book.defaultProps = {
+  chapter: ' chapter 0',
+  progress: '0',
 };

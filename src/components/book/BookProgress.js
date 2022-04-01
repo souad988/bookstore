@@ -9,11 +9,11 @@ function BookProgress({ ...props }) {
   return (
     <div className="bookProgress_container">
       <div style={{ width: 50, height: 50 }}>
-        <CircularProgressbar value={progress} />
+        <CircularProgressbar value={progress || 0} />
       </div>
       <div>
         <span>
-          {progress}
+          {progress || 0}
           %
         </span>
         {' '}
@@ -26,5 +26,9 @@ function BookProgress({ ...props }) {
 
 export default BookProgress;
 BookProgress.propTypes = {
-  progress: PropTypes.string.isRequired,
+  progress: PropTypes.string,
+};
+
+BookProgress.defaultProps = {
+  progress: '0',
 };

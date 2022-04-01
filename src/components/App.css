@@ -13,3 +13,9 @@
   color: #333;
   font-weight: 600;
 }
+
+.emptyStore {
+  margin: 5vh auto;
+  color: #3e98c7;
+  text-align: center;
+}
