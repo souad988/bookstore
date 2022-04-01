@@ -6,7 +6,7 @@ function BookChapter({ ...props }) {
   return (
     <div className="bookChapter_container">
       <h4>Current Chapter</h4>
-      <h5>{chapter}</h5>
+      <h5>{chapter || 'chapter 0'}</h5>
       <button type="button" className="blue_btn">Update Progress</button>
     </div>
   );
@@ -15,4 +15,7 @@ function BookChapter({ ...props }) {
 export default BookChapter;
 BookChapter.propTypes = {
   chapter: PropTypes.string,
+};
+BookChapter.defaultProps = {
+  chapter: ' chapter 0',
 };

@@ -1,9 +1,7 @@
-import BookStoreService from '../../api/apiServices'
-import { Dispatch } from 'react';
-
+import BookStoreService from '../../api/apiServices';
 
 export const booksState = [];
-const SET_BOOKS=  'bookStore/books/SET_BOOKS';
+const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
@@ -20,27 +18,25 @@ export const booksReducer = (booksState = [], action) => {
   }
 };
 
-export function setBooks(books){
-  return {type:SET_BOOKS, books}
+export function setBooks(books) {
+  return { type: SET_BOOKS, books };
 }
 
-export const addBook=(book)=>async(dispatch) =>{
-    try {
-      const response = await BookStoreService.apiAddBook(book)
-      dispatch({ type: ADD_BOOK, book }) ;
-    } catch (error) {
-      console.error('from reducer',error.message);
-    }
-  
-}
-
-export const removeBook=(id) =>async(dispatch) =>{
+export const addBook = (book) => async (dispatch) => {
   try {
-    const response = await BookStoreService.apiRemoveBook(id)
-    console.log(response)
-    dispatch({ type: REMOVE_BOOK, id  }) ;
+    await BookStoreService.apiAddBook(book);
+    dispatch({ type: ADD_BOOK, book });
   } catch (error) {
-    console.error('from reducer',error.message);
+    console.error('from reducer', error.message);
   }
-}
- 
+};
+
+export const removeBook = (id) => async (dispatch) => {
+  try {
+    const response = await BookStoreService.apiRemoveBook(id);
+    console.log(response);
+    dispatch({ type: REMOVE_BOOK, id });
+  } catch (error) {
+    console.error('from reducer', error.message);
+  }
+};

@@ -10,7 +10,7 @@ function Book({ ...props }) {
   const {
     id, author, title, category, progress, chapter,
   } = props;
-  console.log('from Book',id,author,title)
+  console.log('from Book', id, author, title);
   const dispatch = useDispatch();
   const handelClick = () => {
     dispatch(removeBook(id));
@@ -44,4 +44,8 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   progress: PropTypes.string,
+};
+Book.defaultProps = {
+  chapter: ' chapter 0',
+  progress: '0',
 };
