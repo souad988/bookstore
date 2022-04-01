@@ -10,6 +10,7 @@ function Book({ ...props }) {
   const {
     id, author, title, category, progress, chapter,
   } = props;
+  console.log('from Book',id,author,title)
   const dispatch = useDispatch();
   const handelClick = () => {
     dispatch(removeBook(id));

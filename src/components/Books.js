@@ -9,13 +9,18 @@ import BookStoreService from '../api/apiServices'
 function Books() {
   const bookList = useSelector((state) => state.books);
   const dispatch = useDispatch();
+  const reformulateData=(data)=>{
+    let books=Object.entries(data);
+    return books.map(element => {
+       return {'item_id':element[0],...element[1][0]}
+    });
+  }
   useEffect(() => {
     const fetchBooks=async()=>{
       try {
         const response = await BookStoreService.apiGetBooks();
         console.log('from books js::',response.data);
-        dispatch(setBooks(response.data));
-        console.log(bookList)
+        dispatch(setBooks(reformulateData(response.data)));
       } catch (error) {
         console.error(error);
       }
@@ -26,18 +31,19 @@ function Books() {
       
     }
   },[])
-  
+
   return (
     <div className="books_container">
-      {bookList?Object.entries(bookList).map((item_id,book) => (
+      {bookList?bookList.map(item =>( 
         <Book
-          id={item_id}
-          key={item_id}
-          author={book.author}
-          title={book.title}
-          category={book.category}
-          progress={book.progress}
-          chapter={book.chapter}
+          id={item.item_id}
+          key={item.item_id}
+          author={item.author}
+          title={item.title}
+          category={item.category}
+          progress={item.progress}
+          chapter={item.chapter}
+          
         />
       )):<h1 className='emptyStore'>No books in the store</h1>}
       <AddBook />

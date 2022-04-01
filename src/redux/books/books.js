@@ -1,4 +1,6 @@
 import BookStoreService from '../../api/apiServices'
+import { Dispatch } from 'react';
+
 
 export const booksState = [];
 const SET_BOOKS=  'bookStore/books/SET_BOOKS';
@@ -22,20 +24,23 @@ export function setBooks(books){
   return {type:SET_BOOKS, books}
 }
 
-export const addBook=async(book) =>{
-    
+export const addBook=(book)=>async(dispatch) =>{
     try {
       const response = await BookStoreService.apiAddBook(book)
-      console.log(response);
-      dispatch(setBooks([...booksState,book]));
-      console.log('redux state',booksState);
-      return { type: ADD_BOOK, book };
+      dispatch({ type: ADD_BOOK, book }) ;
     } catch (error) {
-      console.error(error);
+      console.error('from reducer',error.message);
     }
   
 }
 
-export function removeBook(id) {
-  return { type: REMOVE_BOOK, id };
+export const removeBook=(id) =>async(dispatch) =>{
+  try {
+    const response = await BookStoreService.apiRemoveBook(id)
+    console.log(response)
+    dispatch({ type: REMOVE_BOOK, id  }) ;
+  } catch (error) {
+    console.error('from reducer',error.message);
+  }
 }
+ 
