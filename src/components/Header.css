@@ -1,13 +1,13 @@
 header {
-  color: #3e98c7;
+  color: #4386bf;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
   position: sticky;
   top: 0;
-  padding: 3vh 5%;
-  box-shadow: 0 3px 4px #646669;
+  padding: 2vh 5%;
+  box-shadow: 0 3px 2px #a1a1a1;
 }
 
 .header_logolinks {
@@ -19,12 +19,12 @@ header {
 
 .header_main {
   width: 80%;
-  margin: 28vh auto;
+  margin: 10vh auto;
 }
 
 .header_logo {
-  color: #3e98c7;
-  font-size: xx-large;
+  color: #0290ff;
+  font-size: large;
 }
 
 .header_links {
@@ -34,14 +34,14 @@ header {
 
 /* unvisited link */
 a {
-  color: #807f7d;
+  color: #b9babb;
   text-decoration: none;
   margin: 0% 10px;
 }
 
 /* mouse over link */
 a:hover {
-  color: #3e98c7;
+  color: #09090a;
 }
 
 /* selected link */
@@ -50,5 +50,5 @@ a:active {
 }
 
 .fa-user {
-  color: #3e98c7;
+  color: #0290ff;
 }

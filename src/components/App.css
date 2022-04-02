@@ -2,20 +2,21 @@
 .App {
   min-height: 100vh;
   width: 100%;
-  background-color: #fafafa;
+  background-color: #f5f6fa;
 }
 
 .blue_btn {
-  background-color: #3e98c7;
+  background-color: #0290ff;
   box-shadow: 0 3px 4px #646669;
   border: none;
   padding: 10px 20px;
-  color: #333;
+  height: 2rem;
+  color: #fafafa;
   font-weight: 600;
 }
 
 .emptyStore {
   margin: 5vh auto;
-  color: #3e98c7;
+  color: #4386bf;
   text-align: center;
 }
