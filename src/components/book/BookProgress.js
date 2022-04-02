@@ -8,17 +8,17 @@ function BookProgress({ ...props }) {
   const { progress } = props;
   return (
     <div className="bookProgress_container">
-      <div style={{ width: 50, height: 50 }}>
+      <div style={{ width: 60, height: 60 }}>
         <CircularProgressbar value={progress || 0} />
       </div>
-      <div>
-        <span>
+      <div className="progress_info">
+        <span className="progress_percent">
           {progress || 0}
           %
         </span>
         {' '}
         <br />
-        <span>Completed</span>
+        <span className="progress_completed">Completed</span>
       </div>
     </div>
   );

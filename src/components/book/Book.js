@@ -16,20 +16,25 @@ function Book({ ...props }) {
   };
   return (
     <div className="book_container">
-      <div className="book_info">
-        <div className="book_info_desc">
-          <strong>{category}</strong>
-          <h3>{title}</h3>
-          <strong>{author}</strong>
+      <div className="book_info_container">
+        <div className="book_info">
+          <div className="book_info_desc">
+            <strong className="book_category">{category}</strong>
+            <h3 className="book_title">{title}</h3>
+            <strong className="book_author">{author}</strong>
+          </div>
+          <div className="book_crud">
+            <button type="button">Comments</button>
+            <div className="vertical_line" />
+            <button type="button" className="remove_btn" onClick={handelClick}>Remove</button>
+            <div className="vertical_line" />
+            <button type="button">Edit</button>
+          </div>
         </div>
-        <div className="book_crud">
-          <button type="button">Comments</button>
-          <button type="button" className="remove_btn" onClick={handelClick}>Remove</button>
-          <button type="button">Edit</button>
-        </div>
+        <BookProgress progress={progress} />
       </div>
 
-      <BookProgress progress={progress} />
+      <div className="vertical" />
       <BookChapter chapter={chapter} />
     </div>
   );

@@ -1,3 +1,16 @@
 .bookProgress_container {
   display: flex;
 }
+
+.progress_percent {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.progress_info {
+  margin-left: 20px;
+}
+
+.progress_completed {
+  opacity: 0.5;
+}

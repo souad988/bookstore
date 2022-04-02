@@ -1,22 +1,69 @@
 .book_container {
-  padding: 2vh 5%;
-  border: 1px solid #727374;
-  border-radius: 5px;
+  padding: 2vh 2%;
+  border: 1px solid #c8c8c9;
   margin: 2vh 0%;
+  display: grid;
+  grid-template-columns: 10fr 1fr 4fr;
+  gap: 20px;
+  align-items: center;
+  justify-items: stretch;
+  background-color: white;
+}
+
+.vertical {
+  border-left: 2px solid #c8c8c9;
+  height: 60px;
+  justify-self: center;
+}
+
+.book_info_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+}
+
+.book_category {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.book_title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.375rem;
+  color: black;
+}
+
+.book_author {
+  color: #4386bf;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.book_crud {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .book_crud button {
   border: none;
   background: none;
   font-weight: 600;
-  color: #727374;
+  color: #4386bf;
 }
 
-.remove_btn {
-  border-left: 2px solid #727374;
-  border-right: 2px solid #727374;
+.book_crud div {
+  margin: 10px;
+}
+
+.vertical_line {
+  border-left: 2px solid #c8c8c9;
+  height: 20px;
+  justify-self: center;
 }
