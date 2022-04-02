@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addBook } from '../redux/books/books';
-import './AddBook.css'
+import './AddBook.css';
 
 function AddBook() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function AddBook() {
     {
       item_id: uuid(),
       chapter: 'chapter 0',
-      category:'classic',
+      category: 'classic',
       progress: '0',
     },
   );
@@ -31,7 +31,7 @@ function AddBook() {
   return (
     <div className="addBook_container">
       <h2>ADD NEW BOOK</h2>
-      <form className='addBook_form'>
+      <form className="addBook_form">
         <input name="title" onChange={onChange} placeholder="Add title" value={book.title ? book.title : ''} />
         <input name="author" onChange={onChange} placeholder="Add author" value={book.author ? book.author : ''} />
         <select name="category" required defaultValue="Category" onChange={onChange}>
